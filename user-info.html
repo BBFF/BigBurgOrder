@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Order Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+</head>
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" class="type-interior">
+
+	<!-- header -->
+	<div data-role="header" data-theme="e">
+		<h1>Order Details</h1>
+			<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+	</div><!-- /header -->
+	
+	
+
+	<div data-role="content" data-theme="d">
+	
+		<!-- main page -->
+		<div class="content-primary">
+
+		<!-- order details form -->
+		<form action="#" method="get">
+
+			<div data-role="fieldcontain">
+	         <label for="name">Name:</label>
+	         <input type="text" name="name" id="name" placeholder="John Smith" value=""  />
+			</div>
+			
+			
+			
+			<div data-role="fieldcontain">
+	         <label for="phone">Phone Number:</label>
+	         <input type="tel" name="phone" id="phone" placeholder="2234 5938" value=""  />
+			</div>
+			
+			
+			
+			<div data-role="fieldcontain">
+	         <label for="adress1">Address Line 1:</label>
+	         <input type="text" name="adress1" id="adress1" value=""  />
+	         <label for="adress2">Address Line 2:</label>
+	         <input type="text" name="adress2" id="adress2" value=""  />
+			</div>
+			
+			
+			
+			<div data-role="fieldcontain">
+				<label for="textarea">Additional Comments:</label>
+				<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+			</div>
+			
+		</form><!-- /order details form -->
+		</div><!-- /main page -->
+		
+	</div>
+
+</body>
+</html>

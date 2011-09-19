@@ -1,0 +1,157 @@
+<html>
+<head>
+<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+	
+</head>
+<body>
+<div data-role="page" id="foo">
+<div data-role="header"><a href='#' class='ui-btn-left' onclick="history.back(); return false">Back</a>
+		<h1>My Order</h1>
+	</div><!-- /header -->
+	<div data-role="content">
+	<div class="content-primary">	
+	
+	
+	
+	<script type="text/javascript">
+	
+	var ul= document.getElementById('start');
+	if(localStorage.getItem("index_m")==null)
+	var index_m=0;
+	else
+	{
+		var index_m=localStorage.getItem("index_m");
+		for(var i=0;i<index_m;i++)
+		{
+			var arr=localStorage.getItem("main"+i).split('||');
+            var newli = document.createElement('li');
+			newli.innerHTML='<a href="order.html" onclick="removeorder('+arr[1]+',\''+arr[0]+'\',\'main\');">'+arr[0]+'<span class="ui-li-aside menu-price">'+arr[1]+'</span></a>';
+			ul.appendChild(newli);
+		}
+	}
+	if(localStorage.getItem("index_d")==null)
+	var index_d=0;
+	else
+	{
+		var index_d=localStorage.getItem("index_d");
+		for(var i=0;i<index_d;i++)
+		{
+			var arr=localStorage.getItem("drink"+i).split('||');
+            var newli = document.createElement('li');
+			newli.innerHTML='<a href="order.html" onclick="removeorder('+arr[1]+',\''+arr[0]+'\',\'drink\');">'+arr[0]+'<span class="ui-li-aside menu-price">'+arr[1]+'</span></a>';
+			ul.appendChild(newli);
+		}
+	}
+	if(localStorage.getItem("index_dt")==null)
+	var index_dt=0;
+	else
+	{
+		var index_dt=localStorage.getItem("index_dt");
+		for(var i=0;i<index_dt;i++)
+		{
+			var arr=localStorage.getItem("desert"+i).split('||');
+            var newli = document.createElement('li');
+			newli.innerHTML='<a href="order.html" onclick="removeorder('+arr[1]+',\''+arr[0]+'\',\'desert\');">'+arr[0]+'<span class="ui-li-aside menu-price">'+arr[1]+'</span></a>';
+			ul.appendChild(newli);
+		}
+	}
+	if(localStorage.getItem("index_s")==null)
+	var index_s=0;
+	else
+	{
+		var index_s=localStorage.getItem("index_s");
+		for(var i=0;i<index_s;i++)
+		{
+			var arr=localStorage.getItem("side"+i).split('||');
+            var newli = document.createElement('li');
+			newli.innerHTML='<a href="order.html" onclick="removeorder('+arr[1]+',\''+arr[0]+'\',\'side\');">'+arr[0]+'<span class="ui-li-aside menu-price">'+arr[1]+'</span></a>';
+			ul.appendChild(newli);
+		}
+	}
+	
+	</script>
+	</div>
+	</div><!--/content-primary -->
+	<div data-role="footer">
+		<h4>Total: </h4>
+	</div><!-- /footer -->
+	<ul data-role="listview" id="start">
+		<a href="info.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Let's Eat!</a>
+	</ul>
+</div><!-- /page -->
+
+
+<script type="text/javascript">
+function removeorder(item_price,item_name,item_type){
+var x;
+var y=item_name+'||'+item_price;
+var agree=confirm("remove "+item_name+" from your order?");
+if (agree)
+{
+	if(item_type=="main")
+	{
+		index_m=localStorage.getItem("index_m");
+		for(var i=0;i<index_m;i++)
+		{
+			x=localStorage.getItem("main"+i);
+			if(x==y)
+			break;
+		}
+		localStorage.removeItem("main"+i);
+		index_m--;
+		localStorage.setItem("index_m",index_m);
+	}
+	if(item_type=="drink")
+	{
+		index_d=localStorage.getItem("index_d");
+		for(var i=0;i<index_d;i++)
+		{
+			x=localStorage.getItem("drink"+i);
+			if(x==y)
+			break;
+		}
+		localStorage.removeItem("drink"+i);
+		index_d--;
+		localStorage.setItem("index_d",index_d);
+	}
+	if(item_type=="desert")
+	{
+		index_dt=localStorage.getItem("index_dt");
+		for(var i=0;i<index_dt;i++)
+		{
+			x=localStorage.getItem("desert"+i);
+			if(x==y)
+			break;
+		}
+		localStorage.removeItem("desert"+i);
+		index_dt--;
+		localStorage.setItem("index_dt",index_dt);
+	}
+	if(item_type=="side")
+	{
+		index_s=localStorage.getItem("index_s");
+		for(var i=0;i<index_d;i++)
+		{
+			x=localStorage.getItem("side"+i);
+			if(x==y)
+			break;
+		}
+		localStorage.removeItem("side"+i);
+		index_s--;
+		localStorage.setItem("index_s",index_s);
+	}
+}
+else
+{
+}
+}
+</script>
+
+</body>
+</html>
