@@ -26,7 +26,7 @@
 <!-- Start of first page -->
 <div data-role="page" id="foo">
 
-	<div data-role="header"><a href='#' class='ui-btn-left' onclick="history.back(); return false">Home</a>
+	<div data-role="header"><a href='#' class='ui-btn-left' data-icon="home" data-iconpos="notext" onclick="history.back(); return false"></a>
 		<h1>Big Burger Order</h1>
 	</div><!-- /header -->
 
@@ -110,10 +110,21 @@
 		</div>
 		</div><!--/content-primary -->	
 
-	<div data-role="footer">
+	<div data-role="footer" data-position="fixed">
+	
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" data-icon="grid" data-theme="a" rel="external">My Items</a></li>
+				<li class="total-price">Total: </li>
+				<li><a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now!</a></li>
+			</ul>
+		</div><!-- /navbar -->
+		
+		<!-- TEST CODE FOR ALT FOOTER BAR
 		<h4>Total: </h4>
+		<a href="order.html" class="ui-btn-right" data-icon="check" >Order</a>
 	</div><!-- /footer -->
-	<a href="order.html" data-role="button" rel="external">Order now!</a>
+	<!-- ALT CODE <a href="order.html" data-role="button" data-theme="b" rel="external">Order Now!</a>-->
 </div><!-- /page -->
 
 <script type="text/javascript">
@@ -184,7 +195,7 @@ else
 }
 
 $("li ul li a").click(function(e) {
-  $("h4").text("Total: $" + total_price);
+  $(".total-price").text("Total: $" + total_price);
 });
 
 </script>
