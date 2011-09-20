@@ -97,55 +97,68 @@ if (agree)
 	if(item_type=="main")
 	{
 		index_m=localStorage.getItem("index_m");
-		for(var i=0;i<index_m;i++)
+                var last=localStorage.getItem("main"+(index_m-1));
+		for(var i=index_m;i>0;i--)
 		{
 			x=localStorage.getItem("main"+i);
 			if(x==y)
+                        {
+                        localStorage.setItem("main"+i,last);
 			break;
+                        }
 		}
-		localStorage.removeItem("main"+i);
 		index_m--;
 		localStorage.setItem("index_m",index_m);
 	}
 	if(item_type=="drink")
 	{
 		index_d=localStorage.getItem("index_d");
-		for(var i=0;i<index_d;i++)
+		var last=localStorage.getItem("drink"+(index_d-1));
+		for(var i=index_d;i>0;i--)
 		{
 			x=localStorage.getItem("drink"+i);
 			if(x==y)
+                        {
+                        localStorage.setItem("drink"+i,last);
 			break;
+                        }
 		}
-		localStorage.removeItem("drink"+i);
 		index_d--;
 		localStorage.setItem("index_d",index_d);
 	}
 	if(item_type=="desert")
 	{
 		index_dt=localStorage.getItem("index_dt");
-		for(var i=0;i<index_dt;i++)
+		var last=localStorage.getItem("desert"+(index_dt-1));
+		for(var i=index_dt;i>0;i--)
 		{
-			x=localStorage.getItem("desert"+i);
+			x=localStorage.getItem("deser"+i);
 			if(x==y)
+                        {
+                        localStorage.setItem("desert"+i,last);
 			break;
+                        }
 		}
-		localStorage.removeItem("desert"+i);
 		index_dt--;
 		localStorage.setItem("index_dt",index_dt);
 	}
 	if(item_type=="side")
 	{
 		index_s=localStorage.getItem("index_s");
-		for(var i=0;i<index_d;i++)
+		var last=localStorage.getItem("side"+(index_s-1));
+		for(var i=index_s;i>0;i--)
 		{
 			x=localStorage.getItem("side"+i);
 			if(x==y)
+                        {
+                        localStorage.setItem("side"+i,last);
 			break;
+                        }
 		}
-		localStorage.removeItem("side"+i);
 		index_s--;
 		localStorage.setItem("index_s",index_s);
 	}
+
 }
 else
 {
