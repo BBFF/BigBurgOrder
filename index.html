@@ -9,20 +9,20 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
-	
-</head>
-<body>
-<script type="text/javascript">
+	<script type="text/javascript">
 	function init(){
 	if(localStorage.getItem("total_price")==null)
 	total_price = 0;
 	else
 	total_price=+(localStorage.getItem("total_price"));
-
-	$("h4").text("Total: $" + total_price.toFixed(2));
+	
+	$("h4").text("Total: $" + total_price.toFix(2));
 	}
 	window.onload=init;
 	</script>
+</head>
+<body>
+
 <!-- Start of first page -->
 <div data-role="page" id="foo">
 
@@ -36,10 +36,10 @@
 			<li>
 				<h3>Mains</h3>
 				<p>Hot 'n fresh burgers straight off the grill.</p>
-
+			
 				<ul>
 					<li data-role="list-divider">Classic Burgers</li>
-
+					
 					<li><a href="index.html" onclick="purchase(1.95,'Hamburger','main');">Hamburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
 					<li><a href="index.html" onclick="purchase(1.95,'Cheeseburger','main');">Cheeseburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.00,'Double Cheeseburger','main');">Double Cheeseburger<span class="ui-li-aside menu-price">$2.00</span></a></li>
@@ -47,63 +47,63 @@
 					<li><a href="index.html" onclick="purchase(5.65,'Quarter pounder','main');">Quarter pounder<span class="ui-li-aside menu-price">$5.65</span></a></li>
 					<li><a href="index.html" onclick="purchase(6.35,'Double Quarter pounder','main');">Double Quarter pounder<span class="ui-li-aside menu-price">$6.35</span></a></li>
 					<li><a href="index.html" onclick="purchase(4.20,'Fish Fillet','main');">Fish Fillet<span class="ui-li-aside menu-price">$4.20</span></a></li>
-
-
+					
+					
 					<li data-role="list-divider">Specialty Burgers</li>
-
+					
 					<li><a href="index.html" onclick="purchase(5.25,'Big and Tasty','main');">Big and Tasty<span class="ui-li-aside menu-price">$5.25</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.00,'McChicken','main');">McChicken<span class="ui-li-aside menu-price">$2.00</span></a></li>
 					<li><a href="index.html" onclick="purchase(4.85,'McSpicy','main');">McSpicy<span class="ui-li-aside menu-price">$4.85</span></a></li>
 					<li><a href="index.html" onclick="purchase(5.65,'McSpicy Double','main');">McSpicy Double<span class="ui-li-aside menu-price">$5.65</span></a></li>
 					<li><a href="index.html" onclick="purchase(4.85,'Teppanyaki','main');">Teppanyaki<span class="ui-li-aside menu-price">$4.85</span></a></li>
 					<li><a href="index.html" onclick="purchase(5.65,'Salad Chicken','main');">Salad Chicken<span class="ui-li-aside menu-price">$5.65</span></a></li>
-
-
+					
+					
 					<li data-role="list-divider">Chicken</li>
-
+					
 					<li><a href="index.html" onclick="purchase(4.80,'Wings','main');">Wings<span class="ui-li-aside menu-price">$4.80</span></a></li>
 					<li><a href="index.html" onclick="purchase(4.30,'Nuggets 6','main');">Nuggets 6<span class="ui-li-aside menu-price">$4.30</span></a></li>
 					<li><a href="index.html" onclick="purchase(5.10,'Nuggets 9','main');">Nuggets 9<span class="ui-li-aside menu-price">$5.10</span></a></li>
 					<li><a href="index.html" onclick="purchase(8.70,'Nuggets 20','main');">Nuggets 20<span class="ui-li-aside menu-price">$8.70</span></a></li>
-
+					
 				</ul>
 			</li>
 			<li>
 
 				<h3>Sides</h3>
 				<p>Add some delicious sides to your main entree.</p>
-
+	
 				<ul>
 					<li><a href="index.html" onclick="purchase(1.50,'Fries S','side');">Fries S<span class="ui-li-aside menu-price">$1.50</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.80,'Fries M','side');">Fries M<span class="ui-li-aside menu-price">$2.80</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.95,'Fries L','side');">Fries L<span class="ui-li-aside menu-price">$2.95</span></a></li>
-
+					
 				</ul>
 			</li>
 			<li>
 				<h3>Drinks</h3>
 				<p>If you're thirsty you might want a drink.</p>
-
+				
 				<ul>
 					<li><a href="index.html" onclick="purchase(2.40,'Pop','drink');">Pop<span class="ui-li-aside menu-price">$2.40</span></a></li>					 
 					<li><a href="index.html" onclick="purchase(2.75,'Ice Lemon Tea','drink');">Ice Lemon Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>					
 					<li><a href="index.html" onclick="purchase(2.75,'Green Tea','drink');">Green Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>		
 					<li><a href="index.html" onclick="purchase(2.85,'Iced Milo','drink');">Iced Milo<span class="ui-li-aside menu-price">$2.85</span></a></li>		
 					<li><a href="index.html" onclick="purchase(3.20,'Orange Juice','drink');">Orange Juice<span class="ui-li-aside menu-price">$3.20</span></a></li>	
-
+					
 				</ul>
 			</li>
 			<li>
 				<h3>Dessert</h3>
 				<p>sweet stuff.</p>
-
+				
 				<ul>
 					<li><a href="index.html" onclick="purchase(1.50,'Sundae','desert');">Sundae<span class="ui-li-aside menu-price">$1.50</span></a></li>		
 					<li><a href="index.html" onclick="purchase(2.00,'McFlurry','desert');">McFlurry<span class="ui-li-aside menu-price">$2.00</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.70,'Special McFlurry','desert');">Special McFlurry<span class="ui-li-aside menu-price">$2.70</span></a></li>
 					<li><a href="index.html" onclick="purchase(1.00,'Apple Pie','desert');">Apple Pie<span class="ui-li-aside menu-price">$1.00</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.70,'Melts','desert');">Melts<span class="ui-li-aside menu-price">$2.70</span></a></li>
-
+					
 				</ul>
 			</li>
 		</ul>
@@ -111,28 +111,15 @@
 		</div><!--/content-primary -->	
 
 	<div data-role="footer" data-position="fixed">
-
+	
 		<div data-role="navbar">
-			<ul id="bottom">  
+			<ul>
+				<li><a href="#" data-icon="grid" data-theme="a" rel="external">My Items</a></li>
+				<li class="total-price">Total: </li>
+				<li><a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now!</a></li>
 			</ul>
-
-                              <script type="text/javascript">
-                               var ul= document.getElementById('bottom');
-                                var newli1=document.createElement('li');
-                                newli1.innerHTML='<a href="#" data-icon="grid" data-theme="a" rel="external">My Items</a>';
-                                ul.appendChild(newli1);
-	                        var tp=localStorage.getItem('total_price');
-                                var newli = document.createElement('li');
-                                newli.setAttribute('id','total-price');
-			        newli.innerHTML='Total: $'+tp;
-			        ul.appendChild(newli);
-
-                                var newli2=document.createElement('li');
-                                newli2.innerHTML='<a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now!</a>';
-                                ul.appendChild(newli2);
-                                </script>
 		</div><!-- /navbar -->
-
+		
 		<!-- TEST CODE FOR ALT FOOTER BAR
 		<h4>Total: </h4>
 		<a href="order.html" class="ui-btn-right" data-icon="check" >Order</a>
@@ -156,12 +143,12 @@ if(localStorage.getItem("index_s")==null)
 	var index_s=0;
 else
 	var index_s=localStorage.getItem("index_s");
-
+	
 if(localStorage.getItem("index_d")==null)
 	var index_d=0;
 else
 	var index_d=localStorage.getItem("index_d");
-
+	
 if(localStorage.getItem("index_dt")==null)
 	var index_dt=0;
 else
@@ -197,20 +184,18 @@ else
 			}
 		}
 	}
-
+	
 	localStorage.setItem("index_m",index_m);
 	localStorage.setItem("index_d",index_d);
 	localStorage.setItem("index_s",index_s);
 	localStorage.setItem("index_dt",index_dt);
 	total_price += item_price;
-	localStorage.setItem("total_price",total_price.toFixed(2));
+	localStorage.setItem("total_price",total_price.toFix(2));
 	return total_price;
 }
 
 $("li ul li a").click(function(e) {
-  //$(".total-price").text("Total: $" + total_price.toFixed(2));
-var tp=document.getElementById('total-price');
-tp.innerHTML="Total: $"+total_price.toFixed(2);
+  $(".total-price").text("Total: $" + total_price.toFix(2));
 });
 
 </script>
