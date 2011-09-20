@@ -9,3 +9,17 @@
 	padding-top: 15px;
 
 }
+.promos_content {
+	font-size: 14px;
+	padding-top:5px;
+}
+.promos_header {
+	font-size: 14px;
+	font-weight:bold;
+}
+.promos {
+	height:95px;
+	text-align:center;
+	vertical-align:middle;
+	background-color: #CCC;
+ }
