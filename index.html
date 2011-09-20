@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -217,3 +218,269 @@ tp.innerHTML="Total: $"+total_price.toFixed(2);
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+	<script type="text/javascript">
+	function init(){
+	if(localStorage.getItem("total_price")==null)
+	total_price = 0;
+	else
+	total_price=+(localStorage.getItem("total_price"));
+	
+	$("h4").text("Total: $" + total_price);
+	}
+	window.onload=init;
+	
+	promoCounter = 1; 
+	promo1Header = "Promo 1";
+	promo1Content = "Cheeseburger for $2.50 only!";
+	promo2Header = "Promo 2";
+	promo2Content = "Hamburger for $1.50 only!";
+	promo3Header = "Promo 3";
+	promo3Content = "Buy 1 get 1 FREE!";
+	
+	pHeader = promo1Header; pContent = promo1Content;
+	
+	</script>
+</head>
+<body>
+
+<!-- Start of HOME page -->
+
+  <div data-role="page" id="home">
+    <div data-role="header">
+      <h1>Big Burg Fast Fries (BBFF)</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <a href="#order" data-role="button" style="height:200px">Order</a>
+        </div>
+
+        <div class="ui-block-b">
+          <a href="#" data-role="button" style="height:95px">Fav</a>
+          <a href="#" data-role="button" style="height:95px">Delivery Status</a>
+        </div>
+      </div><!-- /grid-a -->
+      <div class="promos"><br /><span class="promos_header"><script type="text/javascript">document.write(pHeader);</script></span><br /><span class="promos_content"><script type="text/javascript">document.write(pContent);</script></span>
+      
+      </div>
+    </div><!-- /content -->
+
+  </div><!-- /page -->
+
+<!-- Start of ORDER page -->
+<div data-role="page" id="order">
+
+	<div data-role="header"><a href='#' class='ui-btn-left' data-icon="home" data-iconpos="notext" onclick="history.back(); return false"></a>
+		<h1>Big Burger Order</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div class="content-primary">	
+		<ul data-role="listview">
+			<li>
+				<h3>Mains</h3>
+				<p>Hot 'n fresh burgers straight off the grill.</p>
+			
+				<ul>
+					<li data-role="list-divider">Classic Burgers</li>
+					
+					<li><a href="index.html" onclick="purchase(1.95,'Hamburger','main');">Hamburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
+					<li><a href="index.html" onclick="purchase(1.95,'Cheeseburger','main');">Cheeseburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.00,'Double Cheeseburger','main');">Double Cheeseburger<span class="ui-li-aside menu-price">$2.00</span></a></li>
+					<li><a href="index.html" onclick="purchase(4.60,'Big Mac','main');">Big Mac<span class="ui-li-aside menu-price">$4.60</span></a></li>
+					<li><a href="index.html" onclick="purchase(5.65,'Quarter pounder','main');">Quarter pounder<span class="ui-li-aside menu-price">$5.65</span></a></li>
+					<li><a href="index.html" onclick="purchase(6.35,'Double Quarter pounder','main');">Double Quarter pounder<span class="ui-li-aside menu-price">$6.35</span></a></li>
+					<li><a href="index.html" onclick="purchase(4.20,'Fish Fillet','main');">Fish Fillet<span class="ui-li-aside menu-price">$4.20</span></a></li>
+					
+					
+					<li data-role="list-divider">Specialty Burgers</li>
+					
+					<li><a href="index.html" onclick="purchase(5.25,'Big and Tasty','main');">Big and Tasty<span class="ui-li-aside menu-price">$5.25</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.00,'McChicken','main');">McChicken<span class="ui-li-aside menu-price">$2.00</span></a></li>
+					<li><a href="index.html" onclick="purchase(4.85,'McSpicy','main');">McSpicy<span class="ui-li-aside menu-price">$4.85</span></a></li>
+					<li><a href="index.html" onclick="purchase(5.65,'McSpicy Double','main');">McSpicy Double<span class="ui-li-aside menu-price">$5.65</span></a></li>
+					<li><a href="index.html" onclick="purchase(4.85,'Teppanyaki','main');">Teppanyaki<span class="ui-li-aside menu-price">$4.85</span></a></li>
+					<li><a href="index.html" onclick="purchase(5.65,'Salad Chicken','main');">Salad Chicken<span class="ui-li-aside menu-price">$5.65</span></a></li>
+					
+					
+					<li data-role="list-divider">Chicken</li>
+					
+					<li><a href="index.html" onclick="purchase(4.80,'Wings','main');">Wings<span class="ui-li-aside menu-price">$4.80</span></a></li>
+					<li><a href="index.html" onclick="purchase(4.30,'Nuggets 6','main');">Nuggets 6<span class="ui-li-aside menu-price">$4.30</span></a></li>
+					<li><a href="index.html" onclick="purchase(5.10,'Nuggets 9','main');">Nuggets 9<span class="ui-li-aside menu-price">$5.10</span></a></li>
+					<li><a href="index.html" onclick="purchase(8.70,'Nuggets 20','main');">Nuggets 20<span class="ui-li-aside menu-price">$8.70</span></a></li>
+					
+				</ul>
+			</li>
+			<li>
+
+				<h3>Sides</h3>
+				<p>Add some delicious sides to your main entree.</p>
+	
+				<ul>
+					<li><a href="index.html" onclick="purchase(1.50,'Fries S','side');">Fries S<span class="ui-li-aside menu-price">$1.50</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.80,'Fries M','side');">Fries M<span class="ui-li-aside menu-price">$2.80</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.95,'Fries L','side');">Fries L<span class="ui-li-aside menu-price">$2.95</span></a></li>
+					
+				</ul>
+			</li>
+			<li>
+				<h3>Drinks</h3>
+				<p>If you're thirsty you might want a drink.</p>
+				
+				<ul>
+					<li><a href="index.html" onclick="purchase(2.40,'Pop','drink');">Pop<span class="ui-li-aside menu-price">$2.40</span></a></li>					 
+					<li><a href="index.html" onclick="purchase(2.75,'Ice Lemon Tea','drink');">Ice Lemon Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>					
+					<li><a href="index.html" onclick="purchase(2.75,'Green Tea','drink');">Green Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>		
+					<li><a href="index.html" onclick="purchase(2.85,'Iced Milo','drink');">Iced Milo<span class="ui-li-aside menu-price">$2.85</span></a></li>		
+					<li><a href="index.html" onclick="purchase(3.20,'Orange Juice','drink');">Orange Juice<span class="ui-li-aside menu-price">$3.20</span></a></li>	
+					
+				</ul>
+			</li>
+			<li>
+				<h3>Dessert</h3>
+				<p>sweet stuff.</p>
+				
+				<ul>
+					<li><a href="index.html" onclick="purchase(1.50,'Sundae','desert');">Sundae<span class="ui-li-aside menu-price">$1.50</span></a></li>		
+					<li><a href="index.html" onclick="purchase(2.00,'McFlurry','desert');">McFlurry<span class="ui-li-aside menu-price">$2.00</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.70,'Special McFlurry','desert');">Special McFlurry<span class="ui-li-aside menu-price">$2.70</span></a></li>
+					<li><a href="index.html" onclick="purchase(1.00,'Apple Pie','desert');">Apple Pie<span class="ui-li-aside menu-price">$1.00</span></a></li>
+					<li><a href="index.html" onclick="purchase(2.70,'Melts','desert');">Melts<span class="ui-li-aside menu-price">$2.70</span></a></li>
+					
+				</ul>
+			</li>
+		</ul>
+		</div>
+		</div><!--/content-primary -->	
+
+	<div data-role="footer" data-position="fixed">
+	
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" data-icon="grid" data-theme="a" rel="external">My Items</a></li>
+				<li class="total-price">Total: </li>
+				<li><a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now!</a></li>
+			</ul>
+		</div><!-- /navbar -->
+		
+		<!-- TEST CODE FOR ALT FOOTER BAR
+		<h4>Total: </h4>
+		<a href="order.html" class="ui-btn-right" data-icon="check" >Order</a>
+	</div><!-- /footer -->
+	<!-- ALT CODE <a href="order.html" data-role="button" data-theme="b" rel="external">Order Now!</a>-->
+</div><!-- /page -->
+
+<script type="text/javascript">
+if(localStorage.getItem("total_price")==null)
+total_price = 0;
+else
+total_price=+(localStorage.getItem("total_price"));
+
+function purchase(item_price,item_name,item_type) {
+if(localStorage.getItem("index_m")==null)
+	var index_m=0;
+else
+	var index_m=localStorage.getItem("index_m");
+
+if(localStorage.getItem("index_s")==null)
+	var index_s=0;
+else
+	var index_s=localStorage.getItem("index_s");
+	
+if(localStorage.getItem("index_d")==null)
+	var index_d=0;
+else
+	var index_d=localStorage.getItem("index_d");
+	
+if(localStorage.getItem("index_dt")==null)
+	var index_dt=0;
+else
+	var index_dt=localStorage.getItem("index_dt");
+
+	if(item_type=="main")
+	{
+		localStorage.setItem("main"+index_m,item_name+'||'+item_price);
+		index_m++;
+		alert('main!');
+	}
+	else
+	{
+		if(item_type=="drink")
+		{
+			localStorage.setItem("drink"+index_d,item_name+'||'+item_price);
+			index_d++;
+			alert('drink!');
+		}
+		else
+		{
+			if(item_type=="desert")
+			{
+			localStorage.setItem("desert"+index_dt,item_name+'||'+item_price);
+			index_dt++;
+			alert('desert!');
+			}
+			else
+			{
+			localStorage.setItem("side"+index_s,item_name+'||'+item_price);
+			index_s++;
+			alert('side!');
+			}
+		}
+	}
+	
+	localStorage.setItem("index_m",index_m);
+	localStorage.setItem("index_d",index_d);
+	localStorage.setItem("index_s",index_s);
+	localStorage.setItem("index_dt",index_dt);
+	total_price += item_price;
+	localStorage.setItem("total_price",total_price);
+	return total_price;
+}
+
+$("li ul li a").click(function(e) {
+  $(".total-price").text("Total: $" + total_price);
+});
+
+$('div.promos').live('swipeleft',function(e){
+	  
+	  if (promoCounter<3) promoCounter++;
+	  
+	  switch(promoCounter){
+		  case 1: pHeader= promo1Header; pContent = promo1Content; break;
+		  case 2: pHeader= promo2Header; pContent = promo2Content; break;
+		  case 3: pHeader= promo3Header; pContent = promo3Content; break;
+	  }
+  $("span.promos_header").text(pHeader);
+  $("span.promos_content").text(pContent);
+});
+ $('div.promos').live('swiperight',function(e){
+	 if (promoCounter>1) promoCounter--;
+	  
+	  switch(promoCounter){
+		  case 1: pHeader= promo1Header; pContent = promo1Content; break;
+		  case 2: pHeader= promo2Header; pContent = promo2Content; break;
+		  case 3: pHeader= promo3Header; pContent = promo3Content; break;
+	  }
+  $("span.promos_header").text(pHeader);
+  $("span.promos_content").text(pContent);
+});
+
+</script>
+
+</body>
+</html>
+>>>>>>> Added Home Page into index
