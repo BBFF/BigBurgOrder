@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title>Order Details</title>
@@ -9,8 +9,44 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  var geocoder;
+  var lat;
+  var lng;
+
+  function initialize() {
+if (navigator.geolocation) 
+{
+	navigator.geolocation.getCurrentPosition(function(position) 
+	{   lat = position.coords.latitude;
+            lng = position.coords.longitude;  console.log('in navigator'+lat+','+lng);
+    geocoder = new google.maps.Geocoder();
+console.log('blah'+lat+','+lng);
+    var latlng = new google.maps.LatLng(lat, lng);
+console.log(lat+','+lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          var arr=results[0].formatted_address.split(', ');
+          var v1=document.getElementById('adress1');
+          var v2=document.getElementById('adress2');
+          v1.value=arr[0];
+          v2.value=arr[1];
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+
+}); 
+} 
+  }
+</script>
 </head>
-<body>
+<body onload="initialize()">
 
 <!-- Start of first page -->
 <div data-role="page" class="type-interior">
@@ -19,11 +55,11 @@
 	<div data-role="header" data-theme="e">
 		<h1>Order Details</h1>
 	</div><!-- /header -->
-	
-	
+
+
 
 	<div data-role="content" data-theme="d">
-	
+
 		<!-- main page -->
 		<div class="content-primary">
 
@@ -34,36 +70,36 @@
 	         <label for="name">Name:</label>
 	         <input type="text" name="name" id="name" placeholder="John Smith" value=""  />
 			</div>
-			
-			
-			
+
+
+
 			<div data-role="fieldcontain">
 	         <label for="phone">Phone Number:</label>
 	         <input type="tel" name="phone" id="phone" placeholder="2234 5938" value=""  />
 			</div>
-			
-			
-			
+
+
+
 			<div data-role="fieldcontain">
 	         <label for="adress1">Address Line 1:</label>
 	         <input type="text" name="adress1" id="adress1" value=""  />
 	         <label for="adress2">Address Line 2:</label>
 	         <input type="text" name="adress2" id="adress2" value=""  />
 			</div>
-			
-			
-			
+
+
+
 			<div data-role="fieldcontain">
 				<label for="textarea">Additional Comments:</label>
 				<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
 			</div>
-			
+
 		</form><!-- /order details form -->
-		
+
 		<a href="submit.html" data-role="button" data-theme="b">Submit!</a>
-		
+
 		</div><!-- /main page -->
-		
+
 	</div>
 
 </body>
