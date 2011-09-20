@@ -7,18 +7,27 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+	<script type="text/javascript">
+	function init(){
+	if(localStorage.getItem("total_price")==null)
+	total_price = 0;
+	else
+	total_price=+(localStorage.getItem("total_price"));
 	
+	$("h4").text("Total: $" + total_price.toFixed(2));
+	}
+	window.onload=init;
+	</script>
 </head>
 <body>
 <div data-role="page" id="foo">
-<div data-role="header"><a href='#' class='ui-btn-left' onclick="history.back(); return false">Back</a>
+<div data-role="header"><a href='index.html' class='ui-btn-left' rel="external">Back</a>
 		<h1>My Order</h1>
 	</div><!-- /header -->
 	<div data-role="content">
 	<div class="content-primary">	
-	
-	
-	
+	<ul data-role="listview" id="start">
+	</ul>
 	<script type="text/javascript">
 	
 	var ul= document.getElementById('start');
@@ -75,20 +84,29 @@
 		}
 	}
 	
+	if(localStorage.getItem("total_price")==null)
+	var total_price = 0;
+	else
+	total_price=+(localStorage.getItem("total_price"));
+	$("h4").text("Total: $" + total_price);
 	</script>
 	</div>
 	</div><!--/content-primary -->
-	<div data-role="footer" data-id="pricefooter" data-position="fixed">
+	<div data-role="footer">
 		<h4>Total: </h4>
 	</div><!-- /footer -->
-	<ul data-role="listview" id="start">
-		<a href="user-info.html" data-role="button" data-rel="dialog" data-theme="b" data-transition="pop">Let's Eat!</a>
-	</ul>
+	<a href="order.html" data-role="button">Next</a>
 </div><!-- /page -->
 
 
 <script type="text/javascript">
 function removeorder(item_price,item_name,item_type){
+
+if(localStorage.getItem("total_price")==null)
+var total_price = 0;
+else
+total_price=+(localStorage.getItem("total_price"));
+
 var x;
 var y=item_name+'||'+item_price;
 var agree=confirm("remove "+item_name+" from your order?");
@@ -97,6 +115,7 @@ if (agree)
 	if(item_type=="main")
 	{
 		index_m=localStorage.getItem("index_m");
+                if(index_m==0) return false;
                 var last=localStorage.getItem("main"+(index_m-1));
 		for(var i=index_m;i>0;i--)
 		{
@@ -113,7 +132,8 @@ if (agree)
 	if(item_type=="drink")
 	{
 		index_d=localStorage.getItem("index_d");
-		var last=localStorage.getItem("drink"+(index_d-1));
+                if(index_d==0) return false;
+		var last=localStorage.getItem("main"+(index_d-1));
 		for(var i=index_d;i>0;i--)
 		{
 			x=localStorage.getItem("drink"+i);
@@ -129,7 +149,8 @@ if (agree)
 	if(item_type=="desert")
 	{
 		index_dt=localStorage.getItem("index_dt");
-		var last=localStorage.getItem("desert"+(index_dt-1));
+                if(index_dt==0) return false;
+		var last=localStorage.getItem("main"+(index_dt-1));
 		for(var i=index_dt;i>0;i--)
 		{
 			x=localStorage.getItem("deser"+i);
@@ -145,7 +166,8 @@ if (agree)
 	if(item_type=="side")
 	{
 		index_s=localStorage.getItem("index_s");
-		var last=localStorage.getItem("side"+(index_s-1));
+                if(index_s==0) return false;
+		var last=localStorage.getItem("main"+(index_s-1));
 		for(var i=index_s;i>0;i--)
 		{
 			x=localStorage.getItem("side"+i);
@@ -158,12 +180,18 @@ if (agree)
 		index_s--;
 		localStorage.setItem("index_s",index_s);
 	}
-
 }
 else
 {
 }
+total_price -= item_price;
+localStorage.setItem("total_price",total_price.toFixed(2));
+window.location.reload();
 }
+
+$("li ul li a").click(function(e) {
+  $("h4").text("Total: $" + total_price);
+});
 </script>
 
 </body>
