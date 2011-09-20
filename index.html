@@ -16,7 +16,7 @@
 	else
 	total_price=+(localStorage.getItem("total_price"));
 	
-	$("h4").text("Total: $" + total_price);
+	$("h4").text("Total: $" + total_price.toFix(2));
 	}
 	window.onload=init;
 	</script>
@@ -190,12 +190,12 @@ else
 	localStorage.setItem("index_s",index_s);
 	localStorage.setItem("index_dt",index_dt);
 	total_price += item_price;
-	localStorage.setItem("total_price",total_price);
+	localStorage.setItem("total_price",total_price.toFix(2));
 	return total_price;
 }
 
 $("li ul li a").click(function(e) {
-  $(".total-price").text("Total: $" + total_price);
+  $(".total-price").text("Total: $" + total_price.toFix(2));
 });
 
 </script>
