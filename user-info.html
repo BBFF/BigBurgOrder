@@ -14,6 +14,9 @@
   var geocoder;
   var lat;
   var lng;
+$(document).bind("mobileinit", function () {
+   $.mobile.ajaxEnabled = false;
+});
 
   function initialize() {
 if (navigator.geolocation) 
@@ -35,15 +38,63 @@ console.log(lat+','+lng);
           v2.value=arr[1];
         } else {
           alert("No results found");
+          var v1=document.getElementById('adress1');
+          v1.placeholder="please enter an address";
         }
       } else {
         alert("Geocoder failed due to: " + status);
+        var v1=document.getElementById('adress1');
+          v1.placeholder="please enter an address";
       }
     });
 
 }); 
 } 
+else
+{
+var v1=document.getElementById('adress1');
+ v1.placeholder="please enter an address";
+}
+
+if(localStorage.getItem("contact")==null)
+{
+
+}
+else
+{
+    var contact=localStorage.getItem("contact");
+    var name=localStorage.getItem("name");
+    var input = document.getElementById('phone');
+    input.value=contact;
+    input=document.getElementById('name');
+    input.value=name;
+}
   }
+</script>
+<script type="text/javascript">
+function process(){
+var input1=document.getElementById('phone');
+var input2=document.getElementById('name');
+var input3=document.getElementById('adress1');
+if(input1.value=="")
+{
+alert('please enter a phone number');
+return false;
+}
+if(input2.value=="")
+{
+alert('please enter a name');
+return false;
+}
+if(input3.value=="")
+{
+alert('please enter an address');
+return false;
+}
+
+//window.location = "http://www.google.com/";
+return true;
+}
 </script>
 </head>
 <body onload="initialize()">
@@ -64,18 +115,18 @@ console.log(lat+','+lng);
 		<div class="content-primary">
 
 		<!-- order details form -->
-		<form action="#" method="get">
+		<form action="submit.php" method="get" data-ajax="false">
 
 			<div data-role="fieldcontain">
 	         <label for="name">Name:</label>
-	         <input type="text" name="name" id="name" placeholder="John Smith" value=""  />
+	         <input type="text" name="name" id="name" placeholder="please enter your name" value=""  />
 			</div>
 
 
 
 			<div data-role="fieldcontain">
 	         <label for="phone">Phone Number:</label>
-	         <input type="tel" name="phone" id="phone" placeholder="2234 5938" value=""  />
+	         <input type="tel" name="phone" id="phone" placeholder="please enter your number" value=""  />
 			</div>
 
 
@@ -93,10 +144,11 @@ console.log(lat+','+lng);
 				<label for="textarea">Additional Comments:</label>
 				<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
 			</div>
+                 <input type="submit" data-role="button" data-theme="b" onclick="return process()" value="Submit!"/>
 
 		</form><!-- /order details form -->
 
-		<a href="submit.html" data-role="button" data-theme="b">Submit!</a>
+		
 
 		</div><!-- /main page -->
 
