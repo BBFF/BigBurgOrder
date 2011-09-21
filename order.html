@@ -17,6 +17,7 @@
 	$("h4").text("Total: $" + total_price.toFixed(2));
 	}
 	window.onload=init;
+        flag=false;
 	</script>
 </head>
 <body>
@@ -101,6 +102,7 @@
 
 <script type="text/javascript">
 function removeorder(item_price,item_name,item_type){
+if(flag) return false;
 
 if(localStorage.getItem("total_price")==null)
 var total_price = 0;
@@ -112,6 +114,7 @@ var y=item_name+'||'+item_price;
 var agree=confirm("remove "+item_name+" from your order?");
 if (agree)
 {
+flag=true;
 	if(item_type=="main")
 	{
 		index_m=localStorage.getItem("index_m");
@@ -180,19 +183,17 @@ if (agree)
 		index_s--;
 		localStorage.setItem("index_s",index_s);
 	}
+total_price -= item_price;
+localStorage.setItem("total_price",total_price.toFixed(2));
+window.location.reload();
 }
 else
 {
 }
-total_price -= item_price;
-localStorage.setItem("total_price",total_price.toFixed(2));
-window.location.reload();
+
 }
 
 $("li ul li a").click(function(e) {
   $("h4").text("Total: $" + total_price);
 });
 </script>
-
-</body>
-</html>
