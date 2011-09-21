@@ -136,7 +136,7 @@ flag=true;
 	{
 		index_d=localStorage.getItem("index_d");
                 if(index_d==0) return false;
-		var last=localStorage.getItem("main"+(index_d-1));
+		var last=localStorage.getItem("drink"+(index_d-1));
 		for(var i=index_d;i>0;i--)
 		{
 			x=localStorage.getItem("drink"+i);
@@ -153,10 +153,10 @@ flag=true;
 	{
 		index_dt=localStorage.getItem("index_dt");
                 if(index_dt==0) return false;
-		var last=localStorage.getItem("main"+(index_dt-1));
+		var last=localStorage.getItem("desert"+(index_dt-1));
 		for(var i=index_dt;i>0;i--)
 		{
-			x=localStorage.getItem("deser"+i);
+			x=localStorage.getItem("desert"+i);
 			if(x==y)
                         {
                         localStorage.setItem("desert"+i,last);
@@ -170,7 +170,7 @@ flag=true;
 	{
 		index_s=localStorage.getItem("index_s");
                 if(index_s==0) return false;
-		var last=localStorage.getItem("main"+(index_s-1));
+		var last=localStorage.getItem("side"+(index_s-1));
 		for(var i=index_s;i>0;i--)
 		{
 			x=localStorage.getItem("side"+i);
