@@ -11,6 +11,11 @@
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+if(localStorage.getItem("total_price")==0 || localStorage.getItem("total_price")==null)
+{
+alert("you have no items in your order");
+window.location="http://zhenlingtsai.com/cs3216_2/bigburger/index.html";
+}
   var geocoder;
   var lat;
   var lng;
