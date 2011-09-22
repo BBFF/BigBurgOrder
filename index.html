@@ -6,7 +6,7 @@
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
@@ -141,9 +141,9 @@
 	                        var tp=localStorage.getItem('total_price');
                                 if(tp==null) tp=0;
                                 var newli = document.createElement('li');
-                                newli.setAttribute('id','total-price');
-			        newli.innerHTML='Total: $'+tp;
-			        ul.appendChild(newli);
+                                newli.setAttribute('class','total-price');
+			        			newli.innerHTML='<div class="total-price-inner">Total: $'+tp+'</div>';
+			        			ul.appendChild(newli);
 
                                 var newli2=document.createElement('li');
                                 newli2.innerHTML='<a href="user-info.html" data-icon="check" data-theme="a" rel="external">Order Now!</a>';

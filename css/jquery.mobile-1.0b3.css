@@ -1376,8 +1376,11 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-grid-a .ui-block-a { clear: left; }
 
 /* grid b: 33/33/33 */
-.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c { width: 33.333%; }
+.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-c { width: 25%; }
 .ui-grid-b .ui-block-a { clear: left; }
+
+/* JOEY CUSTOM */
+.ui-grid-b .ui-block-b { width: 50%; }
 
 /* grid c: 25/25/25/25 */
 .ui-grid-c .ui-block-a, .ui-grid-c .ui-block-b, .ui-grid-c .ui-block-c, .ui-grid-c .ui-block-d { width: 25%; }
@@ -1409,7 +1412,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-navbar-collapsed ul { float: left; width: 75%; margin-right: -2px; }
 .ui-navbar-collapsed .ui-navbar-toggle { float: left; width: 25%; }
 .ui-navbar li.ui-navbar-truncate { position: absolute; left: -9999px; top: -9999px; }
-.ui-navbar li .ui-btn, .ui-navbar .ui-navbar-toggle .ui-btn { display: block; font-size: 12px; text-align: center; margin: 0; border-right-width: 0; }
+.ui-navbar li .ui-btn, .ui-navbar .ui-navbar-toggle .ui-btn { display: block; font-size: 12px; text-align: center; margin: 0; border-right-width: 0; border-left-width: 0; }
 .ui-navbar li .ui-btn {  margin-right: -1px; }
 .ui-navbar li .ui-btn:last-child { margin-right: 0; }
 .ui-header .ui-navbar li .ui-btn, .ui-header .ui-navbar .ui-navbar-toggle .ui-btn,
@@ -1646,9 +1649,9 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
 .ui-li-icon { max-height: 40px; max-width: 40px; left: 10px; top: .9em; }
 .ui-li-thumb, .ui-li-icon, .ui-li-content { float: left; margin-right: 10px; }
 
-.ui-li-aside { float: right; width: 50%; text-align: right; margin: .3em 0; }
+.ui-li-aside { float: right; width: 15%; text-align: right; margin: .3em 0; }
 @media all and (min-width: 480px){
-	 .ui-li-aside { width: 45%; }
+	 .ui-li-aside { width: 15%; }
 }	 
 .ui-li-divider { cursor: default; }
 .ui-li-has-alt .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-alt { padding-right: 95px; }
