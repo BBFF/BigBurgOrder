@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 
 <script type="text/javascript">
+
 <?php
 $contact=$_GET['phone'];
 
@@ -135,6 +136,19 @@ localStorage.removeItem("index_d");
 localStorage.removeItem("index_s");
 localStorage.removeItem("index_dt");
 localStorage.removeItem("total_price");
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25386055-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
 </script>
 </head>
