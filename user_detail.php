@@ -40,18 +40,15 @@ else
 
    if($_SERVER['REQUEST_METHOD']=='PUT')
    {
-       //parse_str(file_get_contents("php://input"),$data);
-       //$data=json_decode(file_get_contents("php://input"),true);
-       $data=readfile("php://input");
-    //   $data=$this->request->body();
+       $data=json_decode(file_get_contents("php://input"),true);
        $ctact=$data->contact;
        $nm=$data->name;
        $db=@mysql_connect("zhenlingtsaicom.fatcowmysql.com", "burger", "burger");
        mysql_select_db("cs3216",$db);
        $q=mysql_query("UPDATE  user set name='$nm' where contact='$ctact'");
-    //   $arr = array('user_id' => $data);
-     //  header( 'Content-Type: application/json' );
-     //  echo json_encode($arr);
+       $arr = array('contact' => $ctact);
+       header( 'Content-Type: application/json' );
+       echo json_encode($arr);
    }
 }
 ?>
