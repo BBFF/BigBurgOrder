@@ -10,7 +10,6 @@
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 
 <script type="text/javascript">
-
 <?php
 $contact=$_GET['phone'];
 
@@ -36,11 +35,19 @@ else
    if($data[0]["name"]==$_GET['name'])
    {
       //do nothing
-      
    }
    else
    {
      //update
+    echo "$.ajax({";
+    echo "type: \"PUT\",";
+    echo "url: \"user_detail.php\",";
+    echo "data: { contact:\"".$contact."\",name:\"".$_GET['name']."\"},";
+    echo "dataType:\"json\",";
+    echo "success: function(data){";
+    echo "console.log(data.contact);";
+    echo "}";
+    echo "});";
    }
 
 }
@@ -138,6 +145,7 @@ localStorage.removeItem("index_dt");
 localStorage.removeItem("total_price");
 
 </script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
