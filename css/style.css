@@ -64,9 +64,10 @@
 	margin-bottom: -20px;
 }
 .logo_index {
-	margin-top: -40px;
-	position: relative;
+	position: absolute;
+	top:0px;
 	z-index: 1000;
-	margin-bottom: -20px;
+	left:50%;
+	margin-left:-27px;
 }
 
