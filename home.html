@@ -8,7 +8,11 @@
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <!--<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 1024px) and (min-device-width: 481px)" href="css/style2.css">-->
 <link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+<<<<<<< HEAD
 <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+=======
+<link type="text/css" rel="stylesheet" href="css/style.css">
+>>>>>>> Changed home.html, add css for home, and added logo image
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 <script type="text/javascript">
@@ -37,24 +41,29 @@ promoCounter = 1;
 </head>
 <body>
 
+
 <!-- Start of first page -->
 <div data-role="page" id="foo">
 
+
 <div data-role="header">
+<<<<<<< HEAD
       <h1 class="logo">Big Burg Fast Fries</h1>
+=======
+      <h1></h1>
+>>>>>>> Changed home.html, add css for home, and added logo image
     </div><!-- /header -->
 
-    <div data-role="content">
-      <div class="ui-grid-a">
-        <div class="ui-block-a">
-          <a href="index.html" data-role="button" style="height:200px" rel="external">Order</a>
-        </div>
+   
+    <div align="center" class="logo_home"><img src="images/bbff_logo.png"></div>
 
-        <div class="ui-block-b">
-          <a href="#" data-role="button" style="height:95px">Fav</a> <a href="track.html" data-role="button"
-          style="height:95px" rel="external">Delivery Status</a>
-        </div>
-      </div><!-- /grid-a -->
+    <div data-role="content">
+    
+
+    
+    
+		<a href="index.html" data-role="button" rel="external" data-theme="e" data-icon="arrow-r">Let's Eat!</a>
+		<a href="track.html" data-role="button" rel="external" data-theme="c" >Check Delivery</a>
 
       <div class="promos">
         <br />
@@ -80,9 +89,12 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <div class="fb-like" data-href="http://bbff.zhenlingtsai.com/home.html" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
     </div><!-- /content -->
+    
+
 
 </div>
 <!-- /first page -->
+
 
 <script type="text/javascript">
 $('div.promos').live('swipeleft',function(e){
