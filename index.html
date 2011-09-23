@@ -8,6 +8,12 @@
 	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript">
+	// ADDS BACK BUTTON TO NESTED LISTS - JOEY
+		$(document).bind("mobileinit", function() {
+			      $.mobile.page.prototype.options.addBackBtn = true;
+		});
+	</script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 	<script type="text/javascript">
 
@@ -47,13 +53,13 @@
 
 	<div data-role="content">
 		<div class="content-primary">	
-		<ul data-role="listview">
+		<ul data-role="listview" data-add-back-btn="true">
 			<li>
 				<h3>Mains</h3>
 				<img src="images/1mains.png" class="menu-icons">
 				<p>Hot 'n fresh burgers straight off the grill.</p>
 
-				<ul>
+				<ul data-add-back-btn="true">
 					<li data-role="list-divider">Classic Burgers</li>
 
 					<li><a href="index.html" onclick="purchase(1.95,'Hamburger','main');">Hamburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
@@ -89,7 +95,7 @@
 				<img src="images/2sides.png" class="menu-icons">
 				<p>Add some delicious sides to your main entree.</p>
 
-				<ul>
+				<ul data-add-back-btn="true">
 					<li><a href="index.html" onclick="purchase(1.50,'Fries S','side');">Fries S<span class="ui-li-aside menu-price">$1.50</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.80,'Fries M','side');">Fries M<span class="ui-li-aside menu-price">$2.80</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.95,'Fries L','side');">Fries L<span class="ui-li-aside menu-price">$2.95</span></a></li>
@@ -227,6 +233,7 @@ $("li ul li a").click(function(e) {
 var tp=document.getElementById('total-price-inner');
 tp.innerHTML="Total: $"+total_price.toFixed(2);
 });
+
 
 </script>
 
