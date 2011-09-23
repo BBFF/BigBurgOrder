@@ -1,4 +1,11 @@
 /* Big Burger Ordering Styles - Joey */
+.logo {
+	font-family: 'Leckerli One', cursive;
+	font-size: 30px;
+	color: #9C1111;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, .9), 2px 1px 0px rgba(187, 187, 187, 0.5);
+}
 .menu-price {
 	font-size: 12px;
 	padding-right:5px;
@@ -9,7 +16,7 @@
 	
 	
 }
-.total-price-inner {
+#total-price-inner {
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
