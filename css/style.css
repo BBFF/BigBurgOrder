@@ -63,4 +63,10 @@
 	position: relative;
 	margin-bottom: -20px;
 }
+.logo_index {
+	margin-top: -40px;
+	position: relative;
+	z-index: 1000;
+	margin-bottom: -20px;
+}
 
