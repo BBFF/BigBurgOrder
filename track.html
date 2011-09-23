@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="foo">
+
+	<div data-role="header">
+      <h1>Big Burg Fast Fries (BBFF)</h1>
+    </div><!-- /header -->
+<form action="#" method="get" data-ajax="false">
+			<div data-role="fieldcontain">
+	         <label for="phone">Phone Number:</label>
+	         <input type="tel" name="phone" id="phone" placeholder="please enter your number" value=""  />
+			</div>
+</form>
+<div id="msg">
+</div>
+<a href="#" data-role="button" onClick="track()" id="track_button">Track my order</a>
+
+</div>
+<script type="text/javascript">
+function track(){
+var ctact=document.getElementById('phone');
+var stat=document.getElementById('msg');
+var button=document.getElementById('track_button');
+button.innerHTML="Tracking";
+var u_id=0;
+if(ctact.value=="")
+{
+alert("Please enter your phone number");
+return false;
+}
+//get user id
+$.get("user_detail.php", { contact: ctact.value},
+function(data){
+if(data!=null)
+{
+console.log(data.id); 
+u_id=data.id;
+}
+else
+{
+stat.innerHTML="you have entered a wrong number";
+button.innerHTML="Track my order";
+return false;
+}
+}, "json");
+//get status
+$.get("orders_detail.php", { userid: u_id},
+function(data){
+console.log(data[0].status); 
+if(data[0].status=="processing")
+stat.innerHTML="your order is currently being put together by bob";
+else
+{
+   if(data[0].status=="delivering")
+   stat.innerHTML="your order is dispatched and on its way";
+   else
+   stat.innerHTML="your order has arrived";
+}
+}, "json");
+
+button.innerHTML="Track my order";
+}
+</script>
+</body>
+</html>

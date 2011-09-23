@@ -1,0 +1,33 @@
+CACHE MANIFEST
+# v1 2011-09-22
+home.html
+index.html
+order.html
+user-info.html
+js/jquery.mobile-1.0b3.js
+js/jquery.mobile-1.0b3.min.js
+js/main.js
+css/jquery.mobile-1.0b3.css
+css/jquery.mobile-1.0b3.min.css
+css/style.css
+css/images/icon-search-black.png
+css/images/icons-18-black.png
+css/images/icons-18-white.png
+css/images/icons-36-black.png
+css/images/icons-36-white.png
+http://code.jquery.com/jquery-1.6.3.min.js
+/images/icon_burger.png
+/images/icon_drink.png
+/images/icon_fries.png
+/images/icon_icecream.png
+
+NETWORK:
+submit.php
+track.html
+user_detail.php
+orders_detail.php
+single_detail.php
+
+FALLBACK:
+submit.php no_submit.html
+track.html no_track.html

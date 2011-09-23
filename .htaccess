@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteRule ^user/([^/\.]+)/?$ user_detail.php?contact=$1 [L]
+RewriteEngine on
+RewriteRule ^fav-burger/([^/\.]+)/?$ favourite_burger.php?id=$1 [L]
+RewriteEngine on
+RewriteRule ^order/([^/\.]+)/?$ orders_detail.php?userid=$1 [L]
+RewriteEngine on
+RewriteRule ^meal/([^/\.]+)/?$ meal_detail.php?orderid=$1 [L]
+RewriteEngine on
+RewriteRule ^single/([^/\.]+)/?$ single_detail.php?orderid=$1 [L]
+
+RewriteEngine on
+RewriteRule ^single_detail/([^/\.]+)/?$ single_detail.php?orderid=$1 [L]
+
+AddType text/cache-manifest .appcache

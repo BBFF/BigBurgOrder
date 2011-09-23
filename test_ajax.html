@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+//$.post("user_detail.php", { contact:"83668888" , name:"zhenling"},function(data){console.log(data.user_id); }, "json");
+</script>
+
+<script type="text/javascript">
+console.log("stuff");
+$.ajax({
+   type: "PUT",
+   url: "user_detail.php",
+   data: { contact:"83667699",name:"pretty"},
+  // dataType:"json",
+   success: function(lala){
+   alert(lala.user_id);
+   }
+ });
+
+</script>
+</body>
+</html>

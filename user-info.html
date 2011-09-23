@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html manifest="burger.appcache">
 <head>
 	<title>Order Details</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -11,11 +11,13 @@
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+
 if(localStorage.getItem("total_price")==0 || localStorage.getItem("total_price")==null)
 {
 alert("you have no items in your order");
 window.location="http://zhenlingtsai.com/cs3216_2/bigburger/index.html";
 }
+
   var geocoder;
   var lat;
   var lng;

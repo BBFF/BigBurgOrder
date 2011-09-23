@@ -1,43 +1,44 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
+<html manifest="burger.appcache">
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
-	<script type="text/javascript">
-		promoCounter = 1;
-    	promo1Header = "Promo 1";
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/style.css">
+<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 1024px) and (min-device-width: 481px)" href="css/style2.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
+<script type="text/javascript">
+promoCounter = 1;
+     promo1Header = "Promo 1";
         promo1Content = "Cheeseburger for $2.50 only!";
         promo2Header = "Promo 2";
         promo2Content = "Hamburger for $1.50 only!";
         promo3Header = "Promo 3";
         promo3Content = "Buy 1 get 1 FREE!";
         pHeader = promo1Header; pContent = promo1Content;
-	</script>
+</script>
 </head>
 <body>
 
 <!-- Start of first page -->
 <div data-role="page" id="foo">
-	
-	<div data-role="header">
+
+<div data-role="header">
       <h1>Big Burg Fast Fries (BBFF)</h1>
     </div><!-- /header -->
 
     <div data-role="content">
       <div class="ui-grid-a">
         <div class="ui-block-a">
-          <a href="index.html" data-role="button" style="height:200px">Order</a>
+          <a href="index.html" data-role="button" style="height:200px" rel="external">Order</a>
         </div>
 
         <div class="ui-block-b">
-          <a href="#" data-role="button" style="height:95px">Fav</a> <a href="#" data-role="button"
-          style="height:95px">Delivery Status</a>
+          <a href="#" data-role="button" style="height:95px">Fav</a> <a href="track.html" data-role="button"
+          style="height:95px" rel="external">Delivery Status</a>
         </div>
       </div><!-- /grid-a -->
 
@@ -55,12 +56,12 @@
         </script></span>
       </div>
     </div><!-- /content -->
-	
+
 </div>
 <!-- /first page -->
 
 <script type="text/javascript">
-	$('div.promos').live('swipeleft',function(e){
+$('div.promos').live('swipeleft',function(e){
     
           if (promoCounter<3) promoCounter++;
          
@@ -87,3 +88,16 @@
 
 </body>
 </html>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25080715-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl/' : 'http://www/') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
