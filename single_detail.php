@@ -1,4 +1,3 @@
-
 <?php 
 
 if($_SERVER['REQUEST_METHOD']=='GET')
@@ -20,7 +19,7 @@ else
 
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
-$orderid=$_POST["orderid"];
+$orderid=$_POST["order_id"];
 $content=$_POST["content"];
 $cost=$_POST["cost"];
 
