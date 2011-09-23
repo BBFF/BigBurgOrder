@@ -142,7 +142,7 @@
                                 if(tp==null) tp=0;
                                 var newli = document.createElement('li');
                                 newli.setAttribute('class','total-price');
-			        			newli.innerHTML='<div class="total-price-inner">Total: $'+tp+'</div>';
+			        			newli.innerHTML='<div id="total-price-inner">Total: $'+tp+'</div>';
 			        			ul.appendChild(newli);
 
                                 var newli2=document.createElement('li');
@@ -189,7 +189,6 @@ else
 	{
 		localStorage.setItem("main"+index_m,item_name+'||'+item_price);
 		index_m++;
-		alert('main!');
 	}
 	else
 	{
@@ -197,7 +196,6 @@ else
 		{
 			localStorage.setItem("drink"+index_d,item_name+'||'+item_price);
 			index_d++;
-			alert('drink!');
 		}
 		else
 		{
@@ -205,13 +203,11 @@ else
 			{
 			localStorage.setItem("desert"+index_dt,item_name+'||'+item_price);
 			index_dt++;
-			alert('desert!');
 			}
 			else
 			{
 			localStorage.setItem("side"+index_s,item_name+'||'+item_price);
 			index_s++;
-			alert('side!');
 			}
 		}
 	}
@@ -227,7 +223,7 @@ else
 
 $("li ul li a").click(function(e) {
   //$(".total-price").text("Total: $" + total_price.toFixed(2));
-var tp=document.getElementById('total-price');
+var tp=document.getElementById('total-price-inner');
 tp.innerHTML="Total: $"+total_price.toFixed(2);
 });
 
