@@ -5,7 +5,7 @@
 <title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.0b3.min.js"></script>
@@ -16,7 +16,7 @@
 	else
 	total_price=+(localStorage.getItem("total_price"));
 	
-	$("h4").text("Total: $" + total_price.toFixed(2));
+	$("#total-price-inner").text("Total: $" + total_price.toFixed(2));
 	}
 	window.onload=init;
         flag=false;
@@ -37,7 +37,7 @@
 </head>
 <body>
 <div data-role="page" id="foo">
-<div data-role="header"><a href='index.html' class='ui-btn-left' rel="external">Back</a>
+<div data-role="header"><a href='index.html' class='ui-btn-left' data-icon="arrow-l" rel="external">Back</a>
 		<h1>My Order</h1>
 	</div><!-- /header -->
 	<div data-role="content">
@@ -108,113 +108,112 @@
 	var total_price = 0;
 	else
 	total_price=+(localStorage.getItem("total_price"));
-	$("h4").text("Total: $" + total_price);
+	$("#total-price-inner").text("Total: $" + total_price);
 	</script>
 	</div>
 	</div><!--/content-primary -->
 	<div data-role="footer">
-		<h4>Total: </h4>
+			<div id="total-price-inner" class="total-price" style="width:50%">Total: </div>
+		<!--<h4>Total: </h4>-->
 	</div><!-- /footer -->
-	<a href="user-info.html" data-role="button">Next</a>
+	<a href="user-info.html" data-rel="dialog" data-transition="pop" data-role="button" data-theme="b" data-iconpos="right" data-icon="arrow-r">Let's Eat!</a>
 </div><!-- /page -->
 
 
 <script type="text/javascript">
 function removeorder(item_price,item_name,item_type){
-if(flag) return false;
-
-if(localStorage.getItem("total_price")==null)
-var total_price = 0;
-else
-total_price=+(localStorage.getItem("total_price"));
-
-var x;
-var y=item_name+'||'+item_price;
-var agree=confirm("remove "+item_name+" "+item_type+" from your order?");
-if (agree)
-{
-flag=true;
-	if(item_type=="main")
+	if(flag) return false;
+	
+	if(localStorage.getItem("total_price")==null)
+	var total_price = 0;
+	else
+	total_price=+(localStorage.getItem("total_price"));
+	
+	var x;
+	var y=item_name+'||'+item_price;
+	var agree=confirm("remove "+item_name+" "+item_type+" from your order?");
+	if (agree)
 	{
-		index_m=localStorage.getItem("index_m");
-                if(index_m==0) return false;
-                var last=localStorage.getItem("main"+(index_m-1));
-		for(var i=index_m;i>0;i--)
+	flag=true;
+		if(item_type=="main")
 		{
-			x=localStorage.getItem("main"+i);
-			if(x==y)
-                        {
-                        localStorage.setItem("main"+i,last);
-			break;
-                        }
+			index_m=localStorage.getItem("index_m");
+	                if(index_m==0) return false;
+	                var last=localStorage.getItem("main"+(index_m-1));
+			for(var i=index_m;i>0;i--)
+			{
+				x=localStorage.getItem("main"+i);
+				if(x==y)
+	                        {
+	                        localStorage.setItem("main"+i,last);
+				break;
+	                        }
+			}
+			index_m--;
+			localStorage.setItem("index_m",index_m);
 		}
-		index_m--;
-		localStorage.setItem("index_m",index_m);
+		if(item_type=="drink")
+		{
+			index_d=localStorage.getItem("index_d");
+	                if(index_d==0) return false;
+			var last=localStorage.getItem("drink"+(index_d-1));
+			for(var i=index_d;i>0;i--)
+			{
+				x=localStorage.getItem("drink"+i);
+				if(x==y)
+	                        {
+	                        localStorage.setItem("drink"+i,last);
+				break;
+	                        }
+			}
+			index_d--;
+			localStorage.setItem("index_d",index_d);
+		}
+		if(item_type=="desert")
+		{
+			index_dt=localStorage.getItem("index_dt");
+	                if(index_dt==0) return false;
+			var last=localStorage.getItem("desert"+(index_dt-1));
+			for(var i=index_dt;i>0;i--)
+			{
+				x=localStorage.getItem("desert"+i);
+				if(x==y)
+	                        {
+	                        localStorage.setItem("desert"+i,last);
+				break;
+	                        }
+			}
+			index_dt--;
+			localStorage.setItem("index_dt",index_dt);
+		}
+		if(item_type=="side")
+		{
+			index_s=localStorage.getItem("index_s");
+	                if(index_s==0) return false;
+			var last=localStorage.getItem("side"+(index_s-1));
+			for(var i=index_s;i>0;i--)
+			{
+				x=localStorage.getItem("side"+i);
+				if(x==y)
+	                        {
+	                        localStorage.setItem("side"+i,last);
+				break;
+	                        }
+			}
+			index_s--;
+			localStorage.setItem("index_s",index_s);
+		}
+	total_price -= item_price;
+	localStorage.setItem("total_price",total_price.toFixed(2));
+	window.location.reload();
 	}
-	if(item_type=="drink")
+	else
 	{
-		index_d=localStorage.getItem("index_d");
-                if(index_d==0) return false;
-		var last=localStorage.getItem("drink"+(index_d-1));
-		for(var i=index_d;i>0;i--)
-		{
-			x=localStorage.getItem("drink"+i);
-			if(x==y)
-                        {
-                        localStorage.setItem("drink"+i,last);
-			break;
-                        }
-		}
-		index_d--;
-		localStorage.setItem("index_d",index_d);
 	}
-	if(item_type=="desert")
-	{
-		index_dt=localStorage.getItem("index_dt");
-                if(index_dt==0) return false;
-		var last=localStorage.getItem("desert"+(index_dt-1));
-		for(var i=index_dt;i>0;i--)
-		{
-			x=localStorage.getItem("desert"+i);
-			if(x==y)
-                        {
-                        localStorage.setItem("desert"+i,last);
-			break;
-                        }
-		}
-		index_dt--;
-		localStorage.setItem("index_dt",index_dt);
-	}
-	if(item_type=="side")
-	{
-		index_s=localStorage.getItem("index_s");
-                if(index_s==0) return false;
-		var last=localStorage.getItem("side"+(index_s-1));
-		for(var i=index_s;i>0;i--)
-		{
-			x=localStorage.getItem("side"+i);
-			if(x==y)
-                        {
-                        localStorage.setItem("side"+i,last);
-			break;
-                        }
-		}
-		index_s--;
-		localStorage.setItem("index_s",index_s);
-	}
-total_price -= item_price;
-localStorage.setItem("total_price",total_price.toFixed(2));
-window.location.reload();
 }
-else
-{
-}
 
-}
+$("#total-price-inner").text("Total: $" + total_price);
 
-$("li ul li a").click(function(e) {
-  $("h4").text("Total: $" + total_price);
-});
 </script>
 
 </body>

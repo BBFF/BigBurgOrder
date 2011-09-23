@@ -3,9 +3,8 @@
 
 <html manifest="burger.appcache">
 <head>
-	<title></title>
+	<title>BBFF Online Ordering!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
 	<link rel="stylesheet" href="css/jquery.mobile-1.0b3.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
@@ -33,23 +32,23 @@
 	else
 	total_price=+(localStorage.getItem("total_price"));
 
-	$("h4").text("Total: $" + total_price.toFixed(2));
+	$("#total-price-inner").text("Total: $" + total_price.toFixed(2));
 	}
 	window.onload=init;
 	</script>
 <!-- Start of first page -->
 <div data-role="page" id="foo">
 
-	<div data-role="header"><a href='#' class='ui-btn-left' data-icon="home" data-iconpos="notext" onclick="history.back(); return false"></a>
-		<h1>Big Burger Order</h1>
+	<div data-role="header"><a href='home.html' class='ui-btn-left' data-icon="home" data-iconpos="notext" rel="external"></a>
+		<center><img src="images/bbff-menu.png" /></center>
 	</div><!-- /header -->
 
 	<div data-role="content">
 		<div class="content-primary">	
 		<ul data-role="listview">
 			<li>
-				<img src="images/icon_burger.png">
 				<h3>Mains</h3>
+				<img src="images/1mains.png" class="menu-icons">
 				<p>Hot 'n fresh burgers straight off the grill.</p>
 
 				<ul>
@@ -84,8 +83,8 @@
 				</ul>
 			</li>
 			<li>
-				<img src="images/icon_fries.png">
 				<h3>Sides</h3>
+				<img src="images/2sides.png" class="menu-icons">
 				<p>Add some delicious sides to your main entree.</p>
 
 				<ul>
@@ -96,8 +95,8 @@
 				</ul>
 			</li>
 			<li>
-				<img src="images/icon_drink.png">
 				<h3>Drinks</h3>
+				<img src="images/3drinks.png" class="menu-icons">
 				<p>If you're thirsty you might want a drink.</p>
 
 				<ul>
@@ -110,8 +109,8 @@
 				</ul>
 			</li>
 			<li>
-				<img src="images/icon_icecream.png">
 				<h3>Dessert</h3>
+				<img src="images/4desserts.png" class="menu-icons">
 				<p>sweet stuff.</p>
 
 				<ul>
@@ -146,7 +145,7 @@
 			        			ul.appendChild(newli);
 
                                 var newli2=document.createElement('li');
-                                newli2.innerHTML='<a href="user-info.html" data-icon="check" data-theme="a" rel="external">Order Now!</a>';
+                                newli2.innerHTML='<a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now</a>';
                                 ul.appendChild(newli2);
                                 </script>
 		</div><!-- /navbar -->
