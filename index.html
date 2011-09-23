@@ -37,21 +37,23 @@
 	window.onload=init;
 	</script>
 <!-- Start of first page -->
-<div data-role="page" id="foo">
+<div data-role="page" id="foo" data-theme="d">
 
 	<div data-role="header"><a href='home.html' class='ui-btn-left' data-icon="home" data-iconpos="notext" rel="external"></a>
-		<center><img src="images/bbff-menu.png" /></center>
+		<h1></h1>
 	</div><!-- /header -->
+	
+	<div align="center" class="logo_index"><img src="images/bbff_logo_top.png"></div>
 
 	<div data-role="content">
 		<div class="content-primary">	
-		<ul data-role="listview">
+		<ul data-role="listview" data-theme="d" data-divider-theme="e">
 			<li>
 				<h3>Mains</h3>
 				<img src="images/1mains.png" class="menu-icons">
 				<p>Hot 'n fresh burgers straight off the grill.</p>
 
-				<ul>
+				<ul data-theme="d" data-divider-theme="e">
 					<li data-role="list-divider">Classic Burgers</li>
 
 					<li><a href="index.html" onclick="purchase(1.95,'Hamburger','main');">Hamburger<span class="ui-li-aside menu-price">$1.95</span></a></li>
@@ -82,12 +84,12 @@
 
 				</ul>
 			</li>
-			<li>
+			<li >
 				<h3>Sides</h3>
 				<img src="images/2sides.png" class="menu-icons">
 				<p>Add some delicious sides to your main entree.</p>
 
-				<ul>
+				<ul data-theme="d" data-divider-theme="e">
 					<li><a href="index.html" onclick="purchase(1.50,'Fries S','side');">Fries S<span class="ui-li-aside menu-price">$1.50</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.80,'Fries M','side');">Fries M<span class="ui-li-aside menu-price">$2.80</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.95,'Fries L','side');">Fries L<span class="ui-li-aside menu-price">$2.95</span></a></li>
@@ -99,7 +101,7 @@
 				<img src="images/3drinks.png" class="menu-icons">
 				<p>If you're thirsty you might want a drink.</p>
 
-				<ul>
+				<ul data-theme="d" data-divider-theme="e">
 					<li><a href="index.html" onclick="purchase(2.40,'Pop','drink');">Pop<span class="ui-li-aside menu-price">$2.40</span></a></li>					 
 					<li><a href="index.html" onclick="purchase(2.75,'Ice Lemon Tea','drink');">Ice Lemon Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>					
 					<li><a href="index.html" onclick="purchase(2.75,'Green Tea','drink');">Green Tea<span class="ui-li-aside menu-price">$2.75</span></a></li>		
@@ -113,7 +115,7 @@
 				<img src="images/4desserts.png" class="menu-icons">
 				<p>sweet stuff.</p>
 
-				<ul>
+				<ul data-theme="d" data-divider-theme="e">
 					<li><a href="index.html" onclick="purchase(1.50,'Sundae','desert');">Sundae<span class="ui-li-aside menu-price">$1.50</span></a></li>		
 					<li><a href="index.html" onclick="purchase(2.00,'McFlurry','desert');">McFlurry<span class="ui-li-aside menu-price">$2.00</span></a></li>
 					<li><a href="index.html" onclick="purchase(2.70,'Special McFlurry','desert');">Special McFlurry<span class="ui-li-aside menu-price">$2.70</span></a></li>
@@ -145,7 +147,7 @@
 			        			ul.appendChild(newli);
 
                                 var newli2=document.createElement('li');
-                                newli2.innerHTML='<a href="order.html" data-icon="check" data-theme="a" rel="external">Order Now</a>';
+                                newli2.innerHTML='<a href="order.html" data-icon="check" data-theme="a" rel="external">Order</a>';
                                 ul.appendChild(newli2);
                                 </script>
 		</div><!-- /navbar -->
