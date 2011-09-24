@@ -177,7 +177,7 @@ localStorage.removeItem("total_price");
 </div>
 <script type="text/javascript">
 var div=document.getElementById('msg');
-div.innerHTML="you order has been submitted <br> order id: "+orderid+"<br> destination: "+localStorage.getItem("destination");
+div.innerHTML="You order has been submitted <br> Order id: "+orderid+"<br> Destination: "+localStorage.getItem("destination");
 function track(){
 var button=document.getElementById('track_button');
 button.innerHTML="Tracking..";
@@ -187,13 +187,13 @@ $.get("orders_detail.php", { userid: u_id},
 function(data){
 console.log(data[0].status); 
 if(data[0].status=="processing")
-stat.innerHTML="your order is currently being put together by bob";
+stat.innerHTML="Your order is currently being put together by Bob Staffmember. Just a while more!";
 else
 {
    if(data[0].status=="delivering")
-   stat.innerHTML="your order is dispatched and on its way";
+   stat.innerHTML="Your order is dispatched and on its way. I hope you're hungry!";
    else
-   stat.innerHTML="your order has arrived";
+   stat.innerHTML="Your order has arrived. Let's eat!";
 }
 }, "json");
 
