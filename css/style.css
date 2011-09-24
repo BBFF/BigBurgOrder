@@ -44,19 +44,23 @@
 	width:50%;
 }
 
-.promos_content {
-    font-size: 14px;
-    padding-top:5px;
-}
-.promos_header {
-    font-size: 14px;
-    font-weight:bold;
-}
 .promos {
-	height:95px;
 	text-align:center;
 	vertical-align:middle;
-	background-color: #CCC;
+	background-color: #fff;
+}
+.promos_header {
+	text-align:center;
+	vertical-align:middle;
+	background-color: #fff;
+	color: #000;
+	font-size: x-small;
+	font-family: "Verdana";
+	padding: 2px;
+	opacity:.70;
+	filter:alpha(opacity=70);
+	filter: “alpha(opacity=70)”;
+	
 }
 .logo_home {
 	margin-top: -40px;

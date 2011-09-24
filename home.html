@@ -16,13 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <script type="text/javascript">
 promoCounter = 1;
-     promo1Header = "Promo 1";
-        promo1Content = "Cheeseburger for $2.50 only!";
-        promo2Header = "Promo 2";
-        promo2Content = "Hamburger for $1.50 only!";
-        promo3Header = "Promo 3";
-        promo3Content = "Buy 1 get 1 FREE!";
-        pHeader = promo1Header; pContent = promo1Content;
+promo1 = "images/promo1.png";
+promo2 = "images/promo2.png";
+promo3 = "images/promo3.png";
 </script>
 <script type="text/javascript">
 
@@ -60,19 +56,9 @@ promoCounter = 1;
     
 		<a href="index.html" data-role="button" data-theme="e" data-icon="arrow-r" data-iconpos="right">Let's Eat!</a>
 		<a href="track.html" data-role="button" data-theme="c" >Check Delivery</a>
-
+	<div class="promos_header">Promotions (Swipe to Browse)</div>
       <div class="promos">
-        <br />
-        <span class="promos_header"><script type="text/javascript">
-
-        document.write(pHeader);
- 
-        </script></span><br />
-        <span class="promos_content"><script type="text/javascript">
-
-        document.write(pContent);
-
-        </script></span>
+        <div class="promo_banner" align="center"><img name="promo_img" src="images/promo1.png"></div>
       </div>
  
     </div><!-- /content -->
@@ -86,26 +72,29 @@ promoCounter = 1;
 <script type="text/javascript">
 $('div.promos').live('swipeleft',function(e){
     
+
           if (promoCounter<3) promoCounter++;
+          
+          else {promoCounter = 1;}
          
           switch(promoCounter){
-               case 1: pHeader= promo1Header; pContent = promo1Content; break;
-               case 2: pHeader= promo2Header; pContent = promo2Content; break;
-               case 3: pHeader= promo3Header; pContent = promo3Content; break;
+               case 1: document.images.promo_img.src=promo1; break;
+               case 2: document.images.promo_img.src=promo2; break;
+               case 3: document.images.promo_img.src=promo3; break;
           }
-          $("span.promos_header").text(pHeader);
-          $("span.promos_content").text(pContent);
+          
+          
      });
      $('div.promos').live('swiperight',function(e){
           if (promoCounter>1) promoCounter--;
-         
-          switch(promoCounter){
-               case 1: pHeader= promo1Header; pContent = promo1Content; break;
-               case 2: pHeader= promo2Header; pContent = promo2Content; break;
-               case 3: pHeader= promo3Header; pContent = promo3Content; break;
+          
+          else {promoCounter = 3;}
+          
+                    switch(promoCounter){
+               case 1: document.images.promo_img.src=promo1; break;
+               case 2: document.images.promo_img.src=promo2; break;
+               case 3: document.images.promo_img.src=promo3; break;
           }
-          $("span.promos_header").text(pHeader);
-          $("span.promos_content").text(pContent);
      });
 </script>
 
