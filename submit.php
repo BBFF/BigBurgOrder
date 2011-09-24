@@ -180,7 +180,11 @@ localStorage.removeItem("total_price");
 </div>
 <script type="text/javascript">
 var div=document.getElementById('msg');
+<<<<<<< HEAD
 div.innerHTML="<br>Thank you for ordering with BBFF! <br><br> Your order is being prepared will be delivered to:<br><strong> "+localStorage.getItem("destination")+"</strong><br>";
+=======
+div.innerHTML="Your order has been submitted <br> Order id: "+orderid+"<br> Destination: "+localStorage.getItem("destination");
+>>>>>>> ffaf8b62e15d5e186b25004519d9e33d81f17263
 function track(){
 var button=document.getElementById('track_button');
 button.innerHTML="Tracking..";
@@ -196,7 +200,7 @@ else
    if(data[0].status=="delivering")
    stat.innerHTML="Your order is dispatched and on its way. I hope you're hungry!";
    else
-   stat.innerHTML="Your order has arrived. Let's eat!";
+   stat.innerHTML="Your order has arrived. Let's eat.";
 }
 }, "json");
 
