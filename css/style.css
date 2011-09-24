@@ -67,6 +67,10 @@
 	position: relative;
 	margin-bottom: -20px;
 }
+.logo_home_submit {
+	margin-top: -40px;
+	position: relative
+}
 .logo_index {
 	position: absolute;
 	top:0px;
