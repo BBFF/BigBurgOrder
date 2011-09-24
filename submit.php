@@ -177,7 +177,7 @@ localStorage.removeItem("total_price");
 </div>
 <script type="text/javascript">
 var div=document.getElementById('msg');
-div.innerHTML="You order has been submitted <br> Order id: "+orderid+"<br> Destination: "+localStorage.getItem("destination");
+div.innerHTML="Your order has been submitted <br> Order id: "+orderid+"<br> Destination: "+localStorage.getItem("destination");
 function track(){
 var button=document.getElementById('track_button');
 button.innerHTML="Tracking..";
@@ -193,7 +193,7 @@ else
    if(data[0].status=="delivering")
    stat.innerHTML="Your order is dispatched and on its way. I hope you're hungry!";
    else
-   stat.innerHTML="Your order has arrived. Let's eat!";
+   stat.innerHTML="Your order has arrived. Let's eat.";
 }
 }, "json");
 
