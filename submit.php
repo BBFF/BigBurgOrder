@@ -164,23 +164,20 @@ localStorage.removeItem("total_price");
 <div data-role="page" id="foo">
 
 	<div data-role="header">
-      <h1></h1>
+      <h1>Big Burg Fast Fries (BBFF)</h1>
     </div><!-- /header -->
-      <div align="center" class="logo_home_submit"><img src="images/bbff_logo.png">
-    </div>
-    
 <center>
 <div id="msg">
 </div>
 <div id="status">
 </div>
-<a href="home.html" data-role="button" id="track_button" data-theme="e" data-icon="home" data-iconpos="top">Back to Home</a>
+<a href="#" data-role="button" onClick="track()" id="track_button">Track progress</a>
     <div data-role="content">
 </div>
 </div>
 <script type="text/javascript">
 var div=document.getElementById('msg');
-div.innerHTML="<br>Thank you for ordering with BBFF! <br><br> Your order is being prepared will be delivered to:<br><strong> "+localStorage.getItem("destination")+"</strong><br>";
+div.innerHTML="You order has been submitted <br> Order id: "+orderid+"<br> Destination: "+localStorage.getItem("destination");
 function track(){
 var button=document.getElementById('track_button');
 button.innerHTML="Tracking..";
