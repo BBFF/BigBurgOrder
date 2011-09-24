@@ -36,7 +36,7 @@ include ( "NexmoMessage.php" );
 $nexmo_sms = new NexmoMessage;
 
 //Step 2: Use text_message( $to, $from, $message ) method to send a message. 
-$nexmo_sms->text_message( '6590350605', 'BBFFOrder', 'Hello!' );
+$nexmo_sms->text_message( '6590350605', 'MyApp', 'Hello!' );
 
 //Step 3: Display parsed response.
 echo $nexmo_sms->nexmo_response;

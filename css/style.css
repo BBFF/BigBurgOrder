@@ -48,6 +48,9 @@
 	text-align:center;
 	vertical-align:middle;
 	background-color: #fff;
+	border-radius: 0px 0px 5px 5px; 
+	-moz-border-radius: 0px 0px 5px 5px; 
+	-webkit-border-radius: 0px 0px 5px 5px; 
 }
 .promos_header {
 	text-align:center;
@@ -60,8 +63,15 @@
 	opacity:.70;
 	filter:alpha(opacity=70);
 	filter: “alpha(opacity=70)”;
-	
+	border-radius: 5px 5px 0px 0px; 
+	-moz-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px; 
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+	box-shadow: 0 1px 4px rgba(0,0,0,.3);
+	border-bottom: 1px solid #fff;
 }
+
 .logo_home {
 	margin-top: -40px;
 	position: relative;
